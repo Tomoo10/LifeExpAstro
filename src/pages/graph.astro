@@ -1,0 +1,143 @@
+---
+export const prerender = false;
+import lifeExp from '../data/life_exp.json';
+import '../styles/global.css';
+
+const { searchParams } = new URL(Astro.request.url);
+
+const age = Number(searchParams.get('age')    ?? 0);
+const device = Number(searchParams.get('device') ?? 0);
+const gender = searchParams.get('gender') || '';
+const initial = (searchParams.get('country')      || '').toUpperCase();
+const school = Number(searchParams.get('school') ?? 0);
+const sleep = Number(searchParams.get('sleep')  ?? 0);
+
+const country = lifeExp.find(c => c.initial.toUpperCase() === initial);
+if (!country) {
+  throw new Error(`Unknown country code "${initial}". Check the form.`);
+}
+
+const deathAge = gender === 'male'
+  ? country.male_life_expectancy
+  : country.female_life_expectancy;
+
+const totalWeeks = Math.floor(deathAge * 52);
+const livedWeeks = Math.floor(age * 52);
+const remaining = totalWeeks - livedWeeks;
+
+const phoneWeeks = Math.floor((device * 7 * remaining) / 168);
+const sleepWeeks = Math.floor((sleep  * 7 * remaining) / 168);
+const workWeeks = Math.floor((school * 7 * remaining) / 168);
+const freeWeeks = totalWeeks - (livedWeeks + phoneWeeks + sleepWeeks + workWeeks);
+
+const toYears = w => Math.floor(w / 52);
+const toHours = w => Math.floor(w * 168);
+const toPercent = w => Math.floor((w / totalWeeks) * 100);
+
+const weeksJSON = {
+  life_weeks:  totalWeeks,
+  lived_weeks: livedWeeks,
+  sleep_weeks: sleepWeeks,
+  work_weeks:  workWeeks,
+  phone_weeks: phoneWeeks,
+  free_weeks:  freeWeeks
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Your Life at a Glance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="graphs">
+        <div class="container-graph">
+          <div class="desc">
+            <h1 class="title-name">Your Life at a Glance</h1>
+            <div class="block-exp">
+              <div class="block lived"></div>
+              <p class="exp">Weeks Already Lived 生きた時間</p>
+            </div>
+            <div class="block-exp">
+              <div class="block work"></div>
+              <p class="exp">Weeks at School/Work 働く時間</p>
+            </div>
+            <div class="block-exp">
+              <div class="block sleep"></div>
+              <p class="exp">Weeks You Sleep 寝る時間</p>
+            </div>
+            <div class="block-exp">
+              <div class="block phone"></div>
+              <p class="exp">Weeks you'll spend on your phone スマホを使用する時間</p>
+            </div>
+            <div class="block-exp">
+              <div class="block free"></div>
+              <p class="exp">Weeks Left to Spend on What Truly Matters あなたの自由な時間</p>
+            </div>
+          </div>
+          <div id="blockArea" class="block-container"></div>
+        </div>
+
+        <div class="container-data">
+          <h1 class="title">Stats</h1>
+          <p class="para-data">
+            <strong>
+              Total weeks in your life:
+            </strong>
+             {totalWeeks} weeks
+            ({country.country} ({gender}) life expectancy {deathAge} yrs)
+          </p>
+          <p class="para-data"><strong>Weeks you've already lived:</strong> {livedWeeks} weeks ({toHours(livedWeeks)}hrs)</p>
+          <p class="para-data"><strong>Weeks at at School/Work:</strong> {workWeeks} weeks ({toHours(workWeeks)}hrs)</p>
+          <p class="para-data"><strong>Weeks you sleep:</strong> {sleepWeeks} weeks ({toHours(sleepWeeks)}hrs)</p>
+          <p class="para-data"><strong>Weeks on your phone if habits stay the same:</strong> {phoneWeeks} weeks ({toHours(phoneWeeks)}hrs)</p>
+          <p class="para-data"><strong>Weeks left for what truly matters:</strong> {freeWeeks} weeks ({toHours(freeWeeks)}hrs)</p>
+
+          <h1 class="title">Life Lost to Your Screen</h1>
+          <p class="para-data">
+            {phoneWeeks} weeks = {toYears(phoneWeeks)} years
+            ({toHours(phoneWeeks)} hrs), which is {toPercent(phoneWeeks)}% of your life
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const weeks = {
+          life_weeks: 2980,
+          lived_weeks: 988,
+          sleep_weeks: 249,
+          work_weeks: 332,
+          phone_weeks: 415,
+          free_weeks: 996
+        };
+    
+        const order = [
+          ['lived_weeks', 'lived'],
+          ['work_weeks',  'work'],
+          ['sleep_weeks', 'sleep'],
+          ['phone_weeks', 'phone'],
+          ['free_weeks',  'free']
+        ];
+    
+        const blockArea = document.getElementById("blockArea");
+        if (!blockArea) {
+          console.error("blockArea not found");
+          return;
+        }
+    
+        order.forEach(([key, cls]) => {
+          const count = weeks[key];
+          for (let i = 0; i < count; i++) {
+            const b = document.createElement("div");
+            b.className = `block ${cls}`;
+            blockArea.appendChild(b);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

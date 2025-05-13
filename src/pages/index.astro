@@ -1,16 +1,58 @@
 ---
 
----
+import BaseLayout from "../layouts/BaseLayout.astro";
+import json_data from "../data/life_exp.json"
+import '../styles/global.css';
+const pageTitle = "Home Page";
+const data = json_data
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+---
+<BaseLayout pageTitle={pageTitle}>
+	<div class="centered-screen">
+        <div class="card">
+            <h2 class="text-2xl font-bold text-gray-200 mb-4">Discover How Screen Time Consumes Your Life</h2>
+            <form id="my-form" class="flex flex-col">
+                <input placeholder="Age" id="age" name="age" min="0" max="120" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" required>
+        
+                <input placeholder="Daily Screen Time (hrs)" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" id="device" name="device" min="0" max="24" required>
+        
+                <select class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" name="gender" id="gender" required>
+                    <option value="">Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+        
+                <select class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="country-select" name="country">
+                    <option value="">Country of Birth</option>
+                    { data.map((i) => <option value={i.initial}>{i.country}</option>)}
+                </select>
+        
+                <input placeholder="Daily school/work (hrs)" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" id="school-work" name="school-work" min="0" max="24" required>
+        
+                <input placeholder="Sleep per day (hrs)" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" id="sleep" name="sleep" min="0" max="24" required>
+                
+                <button class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 mb-3 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150" type="submit">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+</BaseLayout>
+<script>
+	document.querySelector('#my-form').addEventListener('submit', (e) => {
+	  e.preventDefault();
+	  const form = e.target;
+
+	  const age = encodeURIComponent(form.age.value);
+	  const device = encodeURIComponent(form.device.value);
+	  const gender = encodeURIComponent(form.gender.value);
+	  const country = encodeURIComponent(form.country.value);
+	  const school = encodeURIComponent(form['school-work'].value);
+	  const sleep = encodeURIComponent(form.sleep.value);
+
+	  const query = `?age=${age}&device=${device}&gender=${gender}&country=${country}&school=${school}&sleep=${sleep}`;
+
+	  window.location.href = '/graph' + query;
+	});
+  </script>
+　
