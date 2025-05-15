@@ -1,58 +1,222 @@
 ---
-
-import BaseLayout from "../layouts/BaseLayout.astro";
-import json_data from "../data/life_exp.json"
 import '../styles/global.css';
-const pageTitle = "Home Page";
-const data = json_data
-
-
+export const prerender = true;
+const pageTitle = 'Home Page';
 ---
-<BaseLayout pageTitle={pageTitle}>
-	<div class="centered-screen">
-        <div class="card">
-            <h2 class="text-2xl font-bold text-gray-200 mb-4">Discover How Screen Time Consumes Your Life</h2>
-            <form id="my-form" class="flex flex-col">
-                <input placeholder="Age" id="age" name="age" min="0" max="120" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" required>
-        
-                <input placeholder="Daily Screen Time (hrs)" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" id="device" name="device" min="0" max="24" required>
-        
-                <select class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" name="gender" id="gender" required>
-                    <option value="">Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-        
-                <select class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="country-select" name="country">
-                    <option value="">Country of Birth</option>
-                    { data.map((i) => <option value={i.initial}>{i.country}</option>)}
-                </select>
-        
-                <input placeholder="Daily school/work (hrs)" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" id="school-work" name="school-work" min="0" max="24" required>
-        
-                <input placeholder="Sleep per day (hrs)" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" id="sleep" name="sleep" min="0" max="24" required>
-                
-                <button class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 mb-3 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150" type="submit">Submit</button>
-                
-            </form>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen flex flex-col items-center justify-center">
+    <div class="card">
+      <h2 class="text-2xl font-bold text-gray-200 mb-4">
+        Discover How Screen Time Consumes Your Life
+      </h2>
+      <form id="my-form" class="flex flex-col">
+        <input
+          placeholder="Age"
+          id="age"
+          name="age"
+          type="number"
+          min="0"
+          max="120"
+          required
+          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+        />
+        <input
+          placeholder="Daily Screen Time (hrs)"
+          id="device"
+          name="device"
+          type="number"
+          min="0"
+          max="24"
+          required
+          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+        />
+        <select
+          id="gender"
+          name="gender"
+          required
+          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+        >
+          <option value="">Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <select
+          id="country"
+          name="country"
+          required
+          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+        >
+          <option value="">Country of Birth</option>
+        </select>
+        <input
+          placeholder="Daily school/work (hrs)"
+          id="school-work"
+          name="school-work"
+          type="number"
+          min="0"
+          max="24"
+          required
+          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+        />
+        <input
+          placeholder="Sleep per day (hrs)"
+          id="sleep"
+          name="sleep"
+          type="number"
+          min="0"
+          max="24"
+          required
+          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+        />
+        <button
+          type="submit"
+          class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-indigo-600 hover:to-blue-600 transition"
+        >
+          Submit
+        </button>
+      </form>
     </div>
-</BaseLayout>
-<script>
-	document.querySelector('#my-form').addEventListener('submit', (e) => {
-	  e.preventDefault();
-	  const form = e.target;
 
-	  const age = encodeURIComponent(form.age.value);
-	  const device = encodeURIComponent(form.device.value);
-	  const gender = encodeURIComponent(form.gender.value);
-	  const country = encodeURIComponent(form.country.value);
-	  const school = encodeURIComponent(form['school-work'].value);
-	  const sleep = encodeURIComponent(form.sleep.value);
+    <!-- placeholder for your blocks -->
+    <div id="graph" class="hidden w-full max-w-3xl mt-8">
+      <div class="container-graph">
+        <div class="desc">
+          <h1 class="title-name">Your Life at a Glance</h1>
+          <div class="block-exp">
+            <div class="block lived"></div><p>Weeks Already Lived</p>
+          </div>
+          <div class="block-exp">
+            <div class="block work"></div><p>Weeks at School/Work</p>
+          </div>
+          <div class="block-exp">
+            <div class="block sleep"></div><p>Weeks You Sleep</p>
+          </div>
+          <div class="block-exp">
+            <div class="block phone"></div><p>Weeks on Your Phone</p>
+          </div>
+          <div class="block-exp">
+            <div class="block free"></div><p>Free Weeks Left</p>
+          </div>
+        </div>
+        <div id="blockArea" class="block-container"></div>
+      </div>
+      <div class="container-data mt-8">
+        <h1 class="title">Stats</h1>
+        <div id="stats" class="para-data"></div>
+        <h1 class="title mt-4">Life Lost to Your Screen</h1>
+        <p id="screen-loss" class="para-data"></p>
+      </div>
+    </div>
 
-	  const query = `?age=${age}&device=${device}&gender=${gender}&country=${country}&school=${school}&sleep=${sleep}`;
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', async () => {
+        // 1️⃣ Fetch your JSON at runtime from public/data
+        const countries = await fetch('/data/life_exp.json').then(r => r.json());
 
-	  window.location.href = '/graph' + query;
-	});
-  </script>
-　
+        // 2️⃣ Populate the country <select>
+        const countrySelect = document.getElementById('country');
+        countries.forEach(c => {
+          const o = document.createElement('option');
+          o.value = c.initial;
+          o.textContent = c.country;
+          countrySelect.append(o);
+        });
+
+        // 3️⃣ Handle form submission
+        document.getElementById('my-form').addEventListener('submit', e => {
+          e.preventDefault();
+          const f = e.target;
+          const qs = new URLSearchParams({
+            age:     f.age.value,
+            device:  f.device.value,
+            gender:  f.gender.value,
+            country: f.country.value,
+            school:  f['school-work'].value,
+            sleep:   f.sleep.value,
+          }).toString();
+
+          // show graph instead of navigating away
+          history.replaceState(null, '', `?${qs}`);
+          renderGraph(new URLSearchParams(qs), countries);
+        });
+
+        // 4️⃣ If URL already has params, render immediately
+        if (location.search) {
+          renderGraph(new URLSearchParams(location.search), countries);
+        }
+
+        // 5️⃣ Graph-rendering function
+        function renderGraph(params, data) {
+          // hide form, show graph
+          document.getElementById('my-form').closest('.card').classList.add('hidden');
+          document.getElementById('graph').classList.remove('hidden');
+
+          // extract & compute
+          const age    = +params.get('age')    || 0;
+          const device = +params.get('device') || 0;
+          const gender = params.get('gender')  || '';
+          const code   = params.get('country') || '';
+          const school = +params.get('school') || 0;
+          const sleep  = +params.get('sleep')  || 0;
+
+          const country = data.find(c => c.initial === code);
+          if (!country) {
+            document.getElementById('stats').textContent = `Unknown country code: ${code}`;
+            return;
+          }
+
+          const deathAge   = gender === 'male'
+            ? country.male_life_expectancy
+            : country.female_life_expectancy;
+          const totalWeeks = Math.floor(deathAge * 52);
+          const lived      = Math.floor(age * 52);
+          const rem        = totalWeeks - lived;
+          const phone      = Math.floor((device * 7 * rem)/168);
+          const sleepW     = Math.floor((sleep  * 7 * rem)/168);
+          const work       = Math.floor((school * 7 * rem)/168);
+          const free       = totalWeeks - (lived + phone + sleepW + work);
+
+          const toY = w => Math.floor(w/52);
+          const toH = w => Math.floor(w*168);
+          const toP = w => Math.floor((w/totalWeeks)*100);
+
+          // draw blocks
+          const weeks = { lived, work, sleep: sleepW, phone, free };
+          const order = [['lived','lived'],['work','work'],['sleep','sleep'],['phone','phone'],['free','free']];
+          const area = document.getElementById('blockArea');
+          area.innerHTML = '';
+          order.forEach(([k,cls]) => {
+            for (let i=0; i<weeks[k]; i++) {
+              const d = document.createElement('div');
+              d.className = `block ${cls}`;
+              area.append(d);
+            }
+          });
+
+          // stats text
+          document.getElementById('stats').innerHTML = `
+            <p>Total weeks: ${totalWeeks} (${country.country}, ${gender}, life exp ${deathAge} yrs)</p>
+            <p>Weeks lived: ${lived} (${toH(lived)} hrs)</p>
+            <p>School/Work: ${work} (${toH(work)} hrs)</p>
+            <p>Sleep: ${sleepW} (${toH(sleepW)} hrs)</p>
+            <p>Phone: ${phone} (${toH(phone)} hrs)</p>
+            <p>Free: ${free} (${toH(free)} hrs)</p>
+          `;
+          document.getElementById('screen-loss').textContent =
+            `${phone} weeks = ${toY(phone)} yrs (${toH(phone)} hrs), ${toP(phone)}% of life`;
+        }
+      });
+    </script>
+  </body>
+</html>

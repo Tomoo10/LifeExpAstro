@@ -1,47 +1,6 @@
 ---
-export const prerender = false;
-import lifeExp from '../data/life_exp.json';
-import '../styles/global.css';
-
-const { searchParams } = new URL(Astro.request.url);
-
-const age = Number(searchParams.get('age')    ?? 0);
-const device = Number(searchParams.get('device') ?? 0);
-const gender = searchParams.get('gender') || '';
-const initial = (searchParams.get('country')      || '').toUpperCase();
-const school = Number(searchParams.get('school') ?? 0);
-const sleep = Number(searchParams.get('sleep')  ?? 0);
-
-const country = lifeExp.find(c => c.initial.toUpperCase() === initial);
-if (!country) {
-  throw new Error(`Unknown country code "${initial}". Check the form.`);
-}
-
-const deathAge = gender === 'male'
-  ? country.male_life_expectancy
-  : country.female_life_expectancy;
-
-const totalWeeks = Math.floor(deathAge * 52);
-const livedWeeks = Math.floor(age * 52);
-const remaining = totalWeeks - livedWeeks;
-
-const phoneWeeks = Math.floor((device * 7 * remaining) / 168);
-const sleepWeeks = Math.floor((sleep  * 7 * remaining) / 168);
-const workWeeks = Math.floor((school * 7 * remaining) / 168);
-const freeWeeks = totalWeeks - (livedWeeks + phoneWeeks + sleepWeeks + workWeeks);
-
-const toYears = w => Math.floor(w / 52);
-const toHours = w => Math.floor(w * 168);
-const toPercent = w => Math.floor((w / totalWeeks) * 100);
-
-const weeksJSON = {
-  life_weeks:  totalWeeks,
-  lived_weeks: livedWeeks,
-  sleep_weeks: sleepWeeks,
-  work_weeks:  workWeeks,
-  phone_weeks: phoneWeeks,
-  free_weeks:  freeWeeks
-};
+// src/pages/index.astro (or graph.astro––just be sure it’s in your pages folder)
+export const prerender = true;
 ---
 
 <!DOCTYPE html>
@@ -50,6 +9,7 @@ const weeksJSON = {
     <meta charset="utf-8" />
     <title>Your Life at a Glance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/global.css">
   </head>
   <body>
     <div class="page">
@@ -71,7 +31,7 @@ const weeksJSON = {
             </div>
             <div class="block-exp">
               <div class="block phone"></div>
-              <p class="exp">Weeks you'll spend on your phone スマホを使用する時間</p>
+              <p class="exp">Weeks on Your Phone スマホを使用する時間</p>
             </div>
             <div class="block-exp">
               <div class="block free"></div>
@@ -83,56 +43,64 @@ const weeksJSON = {
 
         <div class="container-data">
           <h1 class="title">Stats</h1>
-          <p class="para-data">
-            <strong>
-              Total weeks in your life:
-            </strong>
-             {totalWeeks} weeks
-            ({country.country} ({gender}) life expectancy {deathAge} yrs)
-          </p>
-          <p class="para-data"><strong>Weeks you've already lived:</strong> {livedWeeks} weeks ({toHours(livedWeeks)}hrs)</p>
-          <p class="para-data"><strong>Weeks at at School/Work:</strong> {workWeeks} weeks ({toHours(workWeeks)}hrs)</p>
-          <p class="para-data"><strong>Weeks you sleep:</strong> {sleepWeeks} weeks ({toHours(sleepWeeks)}hrs)</p>
-          <p class="para-data"><strong>Weeks on your phone if habits stay the same:</strong> {phoneWeeks} weeks ({toHours(phoneWeeks)}hrs)</p>
-          <p class="para-data"><strong>Weeks left for what truly matters:</strong> {freeWeeks} weeks ({toHours(freeWeeks)}hrs)</p>
+          <div id="stats"></div>
 
           <h1 class="title">Life Lost to Your Screen</h1>
-          <p class="para-data">
-            {phoneWeeks} weeks = {toYears(phoneWeeks)} years
-            ({toHours(phoneWeeks)} hrs), which is {toPercent(phoneWeeks)}% of your life
-          </p>
+          <p id="screen-loss" class="para-data"></p>
         </div>
       </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const weeks = {
-          life_weeks: 2980,
-          lived_weeks: 988,
-          sleep_weeks: 249,
-          work_weeks: 332,
-          phone_weeks: 415,
-          free_weeks: 996
-        };
+
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', async () => {
+        // 1) fetch the JSON
+        const data = await fetch('/data/life_exp.json').then(r => r.json());
     
+        // 2) pull from URL and compute weeks & order
+        const params = new URLSearchParams(location.search);
+        const age        = +params.get('age')    || 0;
+        const device     = +params.get('device') || 0;
+        const gender     = params.get('gender')  || '';
+        const countryKey = (params.get('country')||'').toUpperCase();
+        const school     = +params.get('school') || 0;
+        const sleep      = +params.get('sleep')  || 0;
+    
+        const country = data.find(c => c.initial === countryKey);
+        if (!country) {
+          console.error(`Unknown country code: ${countryKey}`);
+          return;
+        }
+    
+        const deathAge   = gender === 'male'
+          ? country.male_life_expectancy
+          : country.female_life_expectancy;
+        const totalWeeks = Math.floor(deathAge * 52);
+        const lived      = Math.floor(age   * 52);
+        const rem        = totalWeeks - lived;
+        const phone      = Math.floor((device * 7 * rem) / 168);
+        const sleepW     = Math.floor((sleep  * 7 * rem) / 168);
+        const work       = Math.floor((school * 7 * rem) / 168);
+        const free       = totalWeeks - (lived + phone + sleepW + work);
+    
+        const weeks = { lived, work, sleep: sleepW, phone, free };
         const order = [
-          ['lived_weeks', 'lived'],
-          ['work_weeks',  'work'],
-          ['sleep_weeks', 'sleep'],
-          ['phone_weeks', 'phone'],
-          ['free_weeks',  'free']
+          ['lived', 'lived'],
+          ['work',  'work'],
+          ['sleep', 'sleep'],
+          ['phone', 'phone'],
+          ['free',  'free']
         ];
     
-        const blockArea = document.getElementById("blockArea");
+        // 3) now that the DOM is ready, select and append
+        const blockArea = document.getElementById('blockArea');
         if (!blockArea) {
-          console.error("blockArea not found");
+          console.error('👀 #blockArea not found in DOM');
           return;
         }
     
         order.forEach(([key, cls]) => {
-          const count = weeks[key];
-          for (let i = 0; i < count; i++) {
-            const b = document.createElement("div");
+          for (let i = 0; i < weeks[key]; i++) {
+            const b = document.createElement('div');
             b.className = `block ${cls}`;
             blockArea.appendChild(b);
           }

@@ -1,0 +1,1332 @@
+[
+    {
+      "id": 1,
+      "initial": "A",
+      "country": "Afghanistan",
+      "male_life_expectancy": 52.1,
+      "female_life_expectancy": 54.28
+    },
+    {
+      "id": 2,
+      "initial": "AL",
+      "country": "Albania",
+      "male_life_expectancy": 76.8,
+      "female_life_expectancy": 82.33
+    },
+    {
+      "id": 3,
+      "initial": "ALG",
+      "country": "Algeria",
+      "male_life_expectancy": 76.57,
+      "female_life_expectancy": 79.57
+    },
+    {
+      "id": 4,
+      "initial": "AN",
+      "country": "Andorra",
+      "male_life_expectancy": 81.2,
+      "female_life_expectancy": 85.79
+    },
+    {
+      "id": 5,
+      "initial": "ANG",
+      "country": "Angola",
+      "male_life_expectancy": 60.05,
+      "female_life_expectancy": 64.24
+    },
+    {
+      "id": 6,
+      "initial": "ANT",
+      "country": "Antigua and Barbuda",
+      "male_life_expectancy": 75.63,
+      "female_life_expectancy": 80.08
+    },
+    {
+      "id": 7,
+      "initial": "AR",
+      "country": "Argentina",
+      "male_life_expectancy": 75.23,
+      "female_life_expectancy": 81.59
+    },
+    {
+      "id": 8,
+      "initial": "ARM",
+      "country": "Armenia",
+      "male_life_expectancy": 72.86,
+      "female_life_expectancy": 79.68
+    },
+    {
+      "id": 9,
+      "initial": "AU",
+      "country": "Australia",
+      "male_life_expectancy": 80.93,
+      "female_life_expectancy": 85.36
+    },
+    {
+      "id": 10,
+      "initial": "AUS",
+      "country": "Austria",
+      "male_life_expectancy": 79.64,
+      "female_life_expectancy": 85.04
+    },
+    {
+      "id": 11,
+      "initial": "AZ",
+      "country": "Azerbaijan",
+      "male_life_expectancy": 71.08,
+      "female_life_expectancy": 77.41
+    },
+    {
+      "id": 12,
+      "initial": "B",
+      "country": "Bahamas",
+      "male_life_expectancy": 73.2,
+      "female_life_expectancy": 79.14
+    },
+    {
+      "id": 13,
+      "initial": "BA",
+      "country": "Bahrain",
+      "male_life_expectancy": 77.63,
+      "female_life_expectancy": 82.24
+    },
+    {
+      "id": 14,
+      "initial": "BAN",
+      "country": "Bangladesh",
+      "male_life_expectancy": 72.52,
+      "female_life_expectancy": 76.96
+    },
+    {
+      "id": 15,
+      "initial": "BAR",
+      "country": "Barbados",
+      "male_life_expectancy": 75.79,
+      "female_life_expectancy": 81.35
+    },
+    {
+      "id": 16,
+      "initial": "BE",
+      "country": "Belarus",
+      "male_life_expectancy": 68.9,
+      "female_life_expectancy": 79.97
+    },
+    {
+      "id": 17,
+      "initial": "BEL",
+      "country": "Belgium",
+      "male_life_expectancy": 79.25,
+      "female_life_expectancy": 84.59
+    },
+    {
+      "id": 18,
+      "initial": "BELI",
+      "country": "Belize",
+      "male_life_expectancy": 74.23,
+      "female_life_expectancy": 77.5
+    },
+    {
+      "id": 19,
+      "initial": "BEN",
+      "country": "Benin",
+      "male_life_expectancy": 60.39,
+      "female_life_expectancy": 64.14
+    },
+    {
+      "id": 20,
+      "initial": "BH",
+      "country": "Bhutan",
+      "male_life_expectancy": 71.19,
+      "female_life_expectancy": 73.49
+    },
+    {
+      "id": 21,
+      "initial": "BO",
+      "country": "Bolivia",
+      "male_life_expectancy": 71.04,
+      "female_life_expectancy": 74.02
+    },
+    {
+      "id": 22,
+      "initial": "BOS",
+      "country": "Bosnia and Herzegovina",
+      "male_life_expectancy": 75.02,
+      "female_life_expectancy": 81.15
+    },
+    {
+      "id": 23,
+      "initial": "BOT",
+      "country": "Botswana",
+      "male_life_expectancy": 63.6,
+      "female_life_expectancy": 67.74
+    },
+    {
+      "id": 24,
+      "initial": "BRA",
+      "country": "Brazil",
+      "male_life_expectancy": 72.5,
+      "female_life_expectancy": 79.5
+    },
+    {
+      "id": 25,
+      "initial": "BRU",
+      "country": "Brunei",
+      "male_life_expectancy": 78.36,
+      "female_life_expectancy": 82.79
+    },
+    {
+      "id": 26,
+      "initial": "BUL",
+      "country": "Bulgaria",
+      "male_life_expectancy": 72.36,
+      "female_life_expectancy": 78.97
+    },
+    {
+      "id": 27,
+      "initial": "BUR",
+      "country": "Burkina Faso",
+      "male_life_expectancy": 61.63,
+      "female_life_expectancy": 65.31
+    },
+    {
+      "id": 28,
+      "initial": "BDI",
+      "country": "Burundi",
+      "male_life_expectancy": 65.32,
+      "female_life_expectancy": 69.59
+    },
+    {
+      "id": 29,
+      "initial": "C",
+      "country": "Côte d'Ivoire",
+      "male_life_expectancy": 60.07,
+      "female_life_expectancy": 64.52
+    },
+    {
+      "id": 30,
+      "initial": "CAB",
+      "country": "Cabo Verde",
+      "male_life_expectancy": 71.41,
+      "female_life_expectancy": 76.15
+    },
+    {
+      "id": 31,
+      "initial": "CAM",
+      "country": "Cambodia",
+      "male_life_expectancy": 68.79,
+      "female_life_expectancy": 72.59
+    },
+    {
+      "id": 32,
+      "initial": "CAME",
+      "country": "Cameroon",
+      "male_life_expectancy": 61.49,
+      "female_life_expectancy": 65.09
+    },
+    {
+      "id": 33,
+      "initial": "CAN",
+      "country": "Canada",
+      "male_life_expectancy": 81.52,
+      "female_life_expectancy": 86.21
+    },
+    {
+      "id": 34,
+      "initial": "CAR",
+      "country": "Central African Republic",
+      "male_life_expectancy": 54.19,
+      "female_life_expectancy": 56.88
+    },
+    {
+      "id": 35,
+      "initial": "CHA",
+      "country": "Chad",
+      "male_life_expectancy": 57.32,
+      "female_life_expectancy": 61.06
+    },
+    {
+      "id": 36,
+      "initial": "CHI",
+      "country": "Chile",
+      "male_life_expectancy": 76.8,
+      "female_life_expectancy": 82.92
+    },
+    {
+      "id": 37,
+      "initial": "CHIN",
+      "country": "China",
+      "male_life_expectancy": 75.0,
+      "female_life_expectancy": 80.7
+    },
+    {
+      "id": 38,
+      "initial": "COL",
+      "country": "Colombia",
+      "male_life_expectancy": 71.27,
+      "female_life_expectancy": 78.69
+    },
+    {
+      "id": 39,
+      "initial": "COM",
+      "country": "Comoros",
+      "male_life_expectancy": 64.93,
+      "female_life_expectancy": 69.54
+    },
+    {
+      "id": 40,
+      "initial": "CON",
+      "country": "Republic of the Congo",
+      "male_life_expectancy": 60.65,
+      "female_life_expectancy": 63.61
+    },
+    {
+      "id": 41,
+      "initial": "CRI",
+      "country": "Costa Rica",
+      "male_life_expectancy": 76.99,
+      "female_life_expectancy": 82.43
+    },
+    {
+      "id": 42,
+      "initial": "CRO",
+      "country": "Croatia",
+      "male_life_expectancy": 74.1,
+      "female_life_expectancy": 80.53
+    },
+    {
+      "id": 43,
+      "initial": "CUB",
+      "country": "Cuba",
+      "male_life_expectancy": 77.29,
+      "female_life_expectancy": 82.14
+    },
+    {
+      "id": 44,
+      "initial": "CYP",
+      "country": "Cyprus",
+      "male_life_expectancy": 76.93,
+      "female_life_expectancy": 82.68
+    },
+    {
+      "id": 45,
+      "initial": "CZE",
+      "country": "Czech Republic",
+      "male_life_expectancy": 76.8,
+      "female_life_expectancy": 82.82
+    },
+    {
+      "id": 46,
+      "initial": "DRC",
+      "country": "Democratic Republic of the Congo",
+      "male_life_expectancy": 60.03,
+      "female_life_expectancy": 63.69
+    },
+    {
+      "id": 47,
+      "initial": "DEN",
+      "country": "Denmark",
+      "male_life_expectancy": 79.74,
+      "female_life_expectancy": 83.71
+    },
+    {
+      "id": 48,
+      "initial": "DJI",
+      "country": "Djibouti",
+      "male_life_expectancy": 62.72,
+      "female_life_expectancy": 67.96
+    },
+    {
+      "id": 49,
+      "initial": "DOM",
+      "country": "Dominica",
+      "male_life_expectancy": 75.25,
+      "female_life_expectancy": 81.31
+    },
+    {
+      "id": 50,
+      "initial": "DO",
+      "country": "Dominican Republic",
+      "male_life_expectancy": 70.86,
+      "female_life_expectancy": 74.33
+    },
+    {
+      "id": 51,
+      "initial": "ECU",
+      "country": "Ecuador",
+      "male_life_expectancy": 75.06,
+      "female_life_expectancy": 81.1
+    },
+    {
+      "id": 52,
+      "initial": "EGY",
+      "country": "Egypt",
+      "male_life_expectancy": 73.26,
+      "female_life_expectancy": 75.72
+    },
+    {
+      "id": 53,
+      "initial": "ELS",
+      "country": "El Salvador",
+      "male_life_expectancy": 71.88,
+      "female_life_expectancy": 79.04
+    },
+    {
+      "id": 54,
+      "initial": "EQG",
+      "country": "Equatorial Guinea",
+      "male_life_expectancy": 61.44,
+      "female_life_expectancy": 66.03
+    },
+    {
+      "id": 55,
+      "initial": "ERI",
+      "country": "Eritrea",
+      "male_life_expectancy": 64.25,
+      "female_life_expectancy": 69.53
+    },
+    {
+      "id": 56,
+      "initial": "EST",
+      "country": "Estonia",
+      "male_life_expectancy": 73.25,
+      "female_life_expectancy": 82.73
+    },
+    {
+      "id": 57,
+      "initial": "SW",
+      "country": "Eswatini",
+      "male_life_expectancy": 57.62,
+      "female_life_expectancy": 61.81
+    },
+    {
+      "id": 58,
+      "initial": "ETH",
+      "country": "Ethiopia",
+      "male_life_expectancy": 66.12,
+      "female_life_expectancy": 70.44
+    },
+    {
+      "id": 59,
+      "initial": "FIJ",
+      "country": "Fiji",
+      "male_life_expectancy": 71.6,
+      "female_life_expectancy": 77.07
+    },
+    {
+      "id": 60,
+      "initial": "FIN",
+      "country": "Finland",
+      "male_life_expectancy": 78.86,
+      "female_life_expectancy": 84.79
+    },
+    {
+      "id": 61,
+      "initial": "FRA",
+      "country": "France",
+      "male_life_expectancy": 79.53,
+      "female_life_expectancy": 85.79
+    },
+    {
+      "id": 62,
+      "initial": "GAB",
+      "country": "Gabon",
+      "male_life_expectancy": 67.98,
+      "female_life_expectancy": 71.48
+    },
+    {
+      "id": 63,
+      "initial": "GAM",
+      "country": "Gambia",
+      "male_life_expectancy": 65.83,
+      "female_life_expectancy": 69.41
+    },
+    {
+      "id": 64,
+      "initial": "GEO",
+      "country": "Georgia",
+      "male_life_expectancy": 73.45,
+      "female_life_expectancy": 81.74
+    },
+    {
+      "id": 65,
+      "initial": "GER",
+      "country": "Germany",
+      "male_life_expectancy": 79.15,
+      "female_life_expectancy": 84.0
+    },
+    {
+      "id": 66,
+      "initial": "GHA",
+      "country": "Ghana",
+      "male_life_expectancy": 67.7,
+      "female_life_expectancy": 71.09
+    },
+    {
+      "id": 67,
+      "initial": "GRE",
+      "country": "Greece",
+      "male_life_expectancy": 78.96,
+      "female_life_expectancy": 84.2
+    },
+    {
+      "id": 68,
+      "initial": "GRN",
+      "country": "Grenada",
+      "male_life_expectancy": 73.13,
+      "female_life_expectancy": 78.6
+    },
+    {
+      "id": 69,
+      "initial": "GUA",
+      "country": "Guatemala",
+      "male_life_expectancy": 70.88,
+      "female_life_expectancy": 75.04
+    },
+    {
+      "id": 70,
+      "initial": "GUI",
+      "country": "Guinea",
+      "male_life_expectancy": 62.04,
+      "female_life_expectancy": 65.82
+    },
+    {
+      "id": 71,
+      "initial": "GNB",
+      "country": "Guinea-Bissau",
+      "male_life_expectancy": 61.45,
+      "female_life_expectancy": 65.99
+    },
+    {
+      "id": 72,
+      "initial": "GUY",
+      "country": "Guyana",
+      "male_life_expectancy": 70.03,
+      "female_life_expectancy": 73.8
+    },
+    {
+      "id": 73,
+      "initial": "HAI",
+      "country": "Haiti",
+      "male_life_expectancy": 63.26,
+      "female_life_expectancy": 68.67
+    },
+    {
+      "id": 74,
+      "initial": "HON",
+      "country": "Honduras",
+      "male_life_expectancy": 71.63,
+      "female_life_expectancy": 78.82
+    },
+    {
+      "id": 75,
+      "initial": "HUN",
+      "country": "Hungary",
+      "male_life_expectancy": 73.55,
+      "female_life_expectancy": 81.06
+    },
+    {
+      "id": 76,
+      "initial": "ICE",
+      "country": "Iceland",
+      "male_life_expectancy": 81.41,
+      "female_life_expectancy": 85.97
+    },
+    {
+      "id": 77,
+      "initial": "IND",
+      "country": "India",
+      "male_life_expectancy": 65.46,
+      "female_life_expectancy": 69.16
+    },
+    {
+      "id": 78,
+      "initial": "INO",
+      "country": "Indonesia",
+      "male_life_expectancy": 70.86,
+      "female_life_expectancy": 75.4
+    },
+    {
+      "id": 79,
+      "initial": "IRN",
+      "country": "Iran",
+      "male_life_expectancy": 73.89,
+      "female_life_expectancy": 76.67
+    },
+    {
+      "id": 80,
+      "initial": "IRQ",
+      "country": "Iraq",
+      "male_life_expectancy": 71.3,
+      "female_life_expectancy": 75.15
+    },
+    {
+      "id": 81,
+      "initial": "IRL",
+      "country": "Ireland",
+      "male_life_expectancy": 79.35,
+      "female_life_expectancy": 84.1
+    },
+    {
+      "id": 82,
+      "initial": "ISR",
+      "country": "Israel",
+      "male_life_expectancy": 81.45,
+      "female_life_expectancy": 85.34
+    },
+    {
+      "id": 83,
+      "initial": "ITA",
+      "country": "Italy",
+      "male_life_expectancy": 80.25,
+      "female_life_expectancy": 85.08
+    },
+    {
+      "id": 84,
+      "initial": "JAM",
+      "country": "Jamaica",
+      "male_life_expectancy": 73.98,
+      "female_life_expectancy": 77.6
+    },
+    {
+      "id": 85,
+      "initial": "JAP",
+      "country": "Japan",
+      "male_life_expectancy": 81.92,
+      "female_life_expectancy": 87.9
+    },
+    {
+      "id": 86,
+      "initial": "JOR",
+      "country": "Jordan",
+      "male_life_expectancy": 74.51,
+      "female_life_expectancy": 77.6
+    },
+    {
+      "id": 87,
+      "initial": "KAZ",
+      "country": "Kazakhstan",
+      "male_life_expectancy": 67.43,
+      "female_life_expectancy": 77.31
+    },
+    {
+      "id": 88,
+      "initial": "KEN",
+      "country": "Kenya",
+      "male_life_expectancy": 67.98,
+      "female_life_expectancy": 71.43
+    },
+    {
+      "id": 89,
+      "initial": "KIR",
+      "country": "Kiribati",
+      "male_life_expectancy": 65.3,
+      "female_life_expectancy": 70.64
+    },
+    {
+      "id": 90,
+      "initial": "KOS",
+      "country": "Kosovo",
+      "male_life_expectancy": 68.83,
+      "female_life_expectancy": 73.58
+    },
+    {
+      "id": 91,
+      "initial": "KUW",
+      "country": "Kuwait",
+      "male_life_expectancy": 77.67,
+      "female_life_expectancy": 80.65
+    },
+    {
+      "id": 92,
+      "initial": "KYR",
+      "country": "Kyrgyzstan",
+      "male_life_expectancy": 68.27,
+      "female_life_expectancy": 76.71
+    },
+    {
+      "id": 93,
+      "initial": "LAO",
+      "country": "Laos",
+      "male_life_expectancy": 66.49,
+      "female_life_expectancy": 69.88
+    },
+    {
+      "id": 94,
+      "initial": "LAT",
+      "country": "Latvia",
+      "male_life_expectancy": 71.47,
+      "female_life_expectancy": 80.56
+    },
+    {
+      "id": 95,
+      "initial": "LEB",
+      "country": "Lebanon",
+      "male_life_expectancy": 77.36,
+      "female_life_expectancy": 80.23
+    },
+    {
+      "id": 96,
+      "initial": "LES",
+      "country": "Lesotho",
+      "male_life_expectancy": 57.57,
+      "female_life_expectancy": 61.64
+    },
+    {
+      "id": 97,
+      "initial": "LBR",
+      "country": "Liberia",
+      "male_life_expectancy": 63.19,
+      "female_life_expectancy": 67.78
+    },
+    {
+      "id": 98,
+      "initial": "LIB",
+      "country": "Libya",
+      "male_life_expectancy": 74.94,
+      "female_life_expectancy": 79.53
+    },
+    {
+      "id": 99,
+      "initial": "LIE",
+      "country": "Liechtenstein",
+      "male_life_expectancy": 80.33,
+      "female_life_expectancy": 85.38
+    },
+    {
+      "id": 100,
+      "initial": "LTU",
+      "country": "Lithuania",
+      "male_life_expectancy": 70.42,
+      "female_life_expectancy": 81.44
+    },
+    {
+      "id": 101,
+      "initial": "LUX",
+      "country": "Luxembourg",
+      "male_life_expectancy": 80.52,
+      "female_life_expectancy": 85.58
+    },
+    {
+      "id": 102,
+      "initial": "MAC",
+      "country": "Madagascar",
+      "male_life_expectancy": 66.8,
+      "female_life_expectancy": 69.57
+    },
+    {
+      "id": 103,
+      "initial": "MA",
+      "country": "Malawi",
+      "male_life_expectancy": 69.33,
+      "female_life_expectancy": 75.59
+    },
+    {
+      "id": 104,
+      "initial": "MAL",
+      "country": "Malaysia",
+      "male_life_expectancy": 74.5,
+      "female_life_expectancy": 77.87
+    },
+    {
+      "id": 105,
+      "initial": "MV",
+      "country": "Maldives",
+      "male_life_expectancy": 74.57,
+      "female_life_expectancy": 79.42
+    },
+    {
+      "id": 106,
+      "initial": "MLI",
+      "country": "Mali",
+      "male_life_expectancy": 60.19,
+      "female_life_expectancy": 64.7
+    },
+    {
+      "id": 107,
+      "initial": "MLT",
+      "country": "Malta",
+      "male_life_expectancy": 81.11,
+      "female_life_expectancy": 85.38
+    },
+    {
+      "id": 108,
+      "initial": "MRS",
+      "country": "Marshall Islands",
+      "male_life_expectancy": 72.4,
+      "female_life_expectancy": 77.01
+    },
+    {
+      "id": 109,
+      "initial": "MTN",
+      "country": "Mauritania",
+      "male_life_expectancy": 62.77,
+      "female_life_expectancy": 67.75
+    },
+    {
+      "id": 110,
+      "initial": "MRI",
+      "country": "Mauritius",
+      "male_life_expectancy": 72.04,
+      "female_life_expectancy": 77.88
+    },
+    {
+      "id": 111,
+      "initial": "MEX",
+      "country": "Mexico",
+      "male_life_expectancy": 68.93,
+      "female_life_expectancy": 75.88
+    },
+    {
+      "id": 112,
+      "initial": "MIC",
+      "country": "Micronesia",
+      "male_life_expectancy": 72.34,
+      "female_life_expectancy": 76.66
+    },
+    {
+      "id": 113,
+      "initial": "MDA",
+      "country": "Moldova",
+      "male_life_expectancy": 68.6,
+      "female_life_expectancy": 76.52
+    },
+    {
+      "id": 114,
+      "initial": "MON",
+      "country": "Monaco",
+      "male_life_expectancy": 85.7,
+      "female_life_expectancy": 93.49
+    },
+    {
+      "id": 115,
+      "initial": "MONG",
+      "country": "Mongolia",
+      "male_life_expectancy": 67.19,
+      "female_life_expectancy": 75.76
+    },
+    {
+      "id": 116,
+      "initial": "MNE",
+      "country": "Montenegro",
+      "male_life_expectancy": 75.32,
+      "female_life_expectancy": 80.27
+    },
+    {
+      "id": 117,
+      "initial": "MOR",
+      "country": "Morocco",
+      "male_life_expectancy": 71.98,
+      "female_life_expectancy": 75.46
+    },
+    {
+      "id": 118,
+      "initial": "MOZ",
+      "country": "Mozambique",
+      "male_life_expectancy": 55.76,
+      "female_life_expectancy": 58.49
+    },
+    {
+      "id": 119,
+      "initial": "MYA",
+      "country": "Myanmar",
+      "male_life_expectancy": 68.27,
+      "female_life_expectancy": 71.67
+    },
+    {
+      "id": 120,
+      "initial": "NAM",
+      "country": "Namibia",
+      "male_life_expectancy": 64.46,
+      "female_life_expectancy": 68.53
+    },
+    {
+      "id": 121,
+      "initial": "NAU",
+      "country": "Nauru",
+      "male_life_expectancy": 64.38,
+      "female_life_expectancy": 71.62
+    },
+    {
+      "id": 122,
+      "initial": "NEP",
+      "country": "Nepal",
+      "male_life_expectancy": 71.66,
+      "female_life_expectancy": 73.17
+    },
+    {
+      "id": 123,
+      "initial": "NET",
+      "country": "Netherlands",
+      "male_life_expectancy": 79.93,
+      "female_life_expectancy": 84.49
+    },
+    {
+      "id": 124,
+      "initial": "NZ",
+      "country": "New Zealand",
+      "male_life_expectancy": 80.78,
+      "female_life_expectancy": 84.39
+    },
+    {
+      "id": 125,
+      "initial": "NIC",
+      "country": "Nicaragua",
+      "male_life_expectancy": 72.56,
+      "female_life_expectancy": 77.11
+    },
+    {
+      "id": 126,
+      "initial": "NIG",
+      "country": "Niger",
+      "male_life_expectancy": 58.55,
+      "female_life_expectancy": 61.68
+    },
+    {
+      "id": 127,
+      "initial": "NGA",
+      "country": "Nigeria",
+      "male_life_expectancy": 59.51,
+      "female_life_expectancy": 63.27
+    },
+    {
+      "id": 128,
+      "initial": "MKD",
+      "country": "North Macedonia",
+      "male_life_expectancy": 74.73,
+      "female_life_expectancy": 79.08
+    },
+    {
+      "id": 129,
+      "initial": "PRK",
+      "country": "North Korea",
+      "male_life_expectancy": 67.88,
+      "female_life_expectancy": 75.88
+    },
+    {
+      "id": 130,
+      "initial": "NOR",
+      "country": "Norway",
+      "male_life_expectancy": 80.42,
+      "female_life_expectancy": 84.79
+    },
+    {
+      "id": 131,
+      "initial": "OMA",
+      "country": "Oman",
+      "male_life_expectancy": 74.96,
+      "female_life_expectancy": 78.93
+    },
+    {
+      "id": 132,
+      "initial": "PAK",
+      "country": "Pakistan",
+      "male_life_expectancy": 67.62,
+      "female_life_expectancy": 71.82
+    },
+    {
+      "id": 133,
+      "initial": "PAL",
+      "country": "Palau",
+      "male_life_expectancy": 71.48,
+      "female_life_expectancy": 78.0
+    },
+    {
+      "id": 134,
+      "initial": "PAN",
+      "country": "Panama",
+      "male_life_expectancy": 74.76,
+      "female_life_expectancy": 80.66
+    },
+    {
+      "id": 135,
+      "initial": "PNG",
+      "country": "Papua New Guinea",
+      "male_life_expectancy": 67.76,
+      "female_life_expectancy": 71.19
+    },
+    {
+      "id": 136,
+      "initial": "PAR",
+      "country": "Paraguay",
+      "male_life_expectancy": 75.72,
+      "female_life_expectancy": 81.15
+    },
+    {
+      "id": 137,
+      "initial": "PER",
+      "country": "Peru",
+      "male_life_expectancy": 65.38,
+      "female_life_expectancy": 72.67
+    },
+    {
+      "id": 138,
+      "initial": "PHI",
+      "country": "Philippines",
+      "male_life_expectancy": 66.6,
+      "female_life_expectancy": 73.86
+    },
+    {
+      "id": 139,
+      "initial": "POL",
+      "country": "Poland",
+      "male_life_expectancy": 75.02,
+      "female_life_expectancy": 82.73
+    },
+    {
+      "id": 140,
+      "initial": "POR",
+      "country": "Portugal",
+      "male_life_expectancy": 78.37,
+      "female_life_expectancy": 84.79
+    },
+    {
+      "id": 141,
+      "initial": "QAT",
+      "country": "Qatar",
+      "male_life_expectancy": 77.7,
+      "female_life_expectancy": 81.96
+    },
+    {
+      "id": 142,
+      "initial": "ROM",
+      "country": "Romania",
+      "male_life_expectancy": 72.3,
+      "female_life_expectancy": 79.4
+    },
+    {
+      "id": 143,
+      "initial": "RUS",
+      "country": "Russia",
+      "male_life_expectancy": 66.92,
+      "female_life_expectancy": 78.3
+    },
+    {
+      "id": 144,
+      "initial": "RWA",
+      "country": "Rwanda",
+      "male_life_expectancy": 63.89,
+      "female_life_expectancy": 67.86
+    },
+    {
+      "id": 145,
+      "initial": "STP",
+      "country": "São Tomé and Príncipe",
+      "male_life_expectancy": 65.44,
+      "female_life_expectancy": 68.72
+    },
+    {
+      "id": 146,
+      "initial": "KSA",
+      "country": "Saudi Arabia",
+      "male_life_expectancy": 75.07,
+      "female_life_expectancy": 78.32
+    },
+    {
+      "id": 147,
+      "initial": "SEN",
+      "country": "Senegal",
+      "male_life_expectancy": 68.23,
+      "female_life_expectancy": 71.77
+    },
+    {
+      "id": 148,
+      "initial": "SRB",
+      "country": "Serbia",
+      "male_life_expectancy": 71.5,
+      "female_life_expectancy": 77.0
+    },
+    {
+      "id": 149,
+      "initial": "SEY",
+      "country": "Seychelles",
+      "male_life_expectancy": 71.67,
+      "female_life_expectancy": 80.66
+    },
+    {
+      "id": 150,
+      "initial": "SLE",
+      "country": "Sierra Leone",
+      "male_life_expectancy": 57.16,
+      "female_life_expectancy": 60.41
+    },
+    {
+      "id": 151,
+      "initial": "SIN",
+      "country": "Singapore",
+      "male_life_expectancy": 83.65,
+      "female_life_expectancy": 89.2
+    },
+    {
+      "id": 152,
+      "initial": "SVK",
+      "country": "Slovakia",
+      "male_life_expectancy": 74.83,
+      "female_life_expectancy": 82.04
+    },
+    {
+      "id": 153,
+      "initial": "SLO",
+      "country": "Slovenia",
+      "male_life_expectancy": 78.96,
+      "female_life_expectancy": 84.79
+    },
+    {
+      "id": 154,
+      "initial": "SOL",
+      "country": "Solomon Islands",
+      "male_life_expectancy": 74.05,
+      "female_life_expectancy": 79.49
+    },
+    {
+      "id": 155,
+      "initial": "SOM",
+      "country": "Somalia",
+      "male_life_expectancy": 53.39,
+      "female_life_expectancy": 58.12
+    },
+    {
+      "id": 156,
+      "initial": "RSA",
+      "country": "South Africa",
+      "male_life_expectancy": 63.99,
+      "female_life_expectancy": 66.68
+    },
+    {
+      "id": 157,
+      "initial": "KOR",
+      "country": "South Korea",
+      "male_life_expectancy": 79.88,
+      "female_life_expectancy": 86.24
+    },
+    {
+      "id": 158,
+      "initial": "SSD",
+      "country": "South Sudan",
+      "male_life_expectancy": 57.43,
+      "female_life_expectancy": 60.97
+    },
+    {
+      "id": 159,
+      "initial": "SPA",
+      "country": "Spain",
+      "male_life_expectancy": 79.84,
+      "female_life_expectancy": 85.4
+    },
+    {
+      "id": 160,
+      "initial": "SRI",
+      "country": "Sri Lanka",
+      "male_life_expectancy": 74.57,
+      "female_life_expectancy": 81.56
+    },
+    {
+      "id": 161,
+      "initial": "SUD",
+      "country": "Sudan",
+      "male_life_expectancy": 64.89,
+      "female_life_expectancy": 69.46
+    },
+    {
+      "id": 162,
+      "initial": "SUR",
+      "country": "Suriname",
+      "male_life_expectancy": 68.81,
+      "female_life_expectancy": 76.27
+    },
+    {
+      "id": 163,
+      "initial": "SWED",
+      "country": "Sweden",
+      "male_life_expectancy": 80.94,
+      "female_life_expectancy": 84.58
+    },
+    {
+      "id": 164,
+      "initial": "SWI",
+      "country": "Switzerland",
+      "male_life_expectancy": 80.91,
+      "female_life_expectancy": 85.67
+    },
+    {
+      "id": 165,
+      "initial": "SYR",
+      "country": "Syria",
+      "male_life_expectancy": 72.82,
+      "female_life_expectancy": 75.84
+    },
+    {
+      "id": 166,
+      "initial": "TAI",
+      "country": "Taiwan",
+      "male_life_expectancy": 78.17,
+      "female_life_expectancy": 84.34
+    },
+    {
+      "id": 167,
+      "initial": "TJK",
+      "country": "Tajikistan",
+      "male_life_expectancy": 66.2,
+      "female_life_expectancy": 72.69
+    },
+    {
+      "id": 168,
+      "initial": "TAN",
+      "country": "Tanzania",
+      "male_life_expectancy": 68.42,
+      "female_life_expectancy": 72.02
+    },
+    {
+      "id": 169,
+      "initial": "THA",
+      "country": "Thailand",
+      "male_life_expectancy": 74.65,
+      "female_life_expectancy": 80.83
+    },
+    {
+      "id": 170,
+      "initial": "TOG",
+      "country": "Togo",
+      "male_life_expectancy": 68.76,
+      "female_life_expectancy": 74.03
+    },
+    {
+      "id": 171,
+      "initial": "TON",
+      "country": "Tonga",
+      "male_life_expectancy": 75.89,
+      "female_life_expectancy": 79.23
+    },
+    {
+      "id": 172,
+      "initial": "TRI",
+      "country": "Trinidad and Tobago",
+      "male_life_expectancy": 74.02,
+      "female_life_expectancy": 77.93
+    },
+    {
+      "id": 173,
+      "initial": "TUN",
+      "country": "Tunisia",
+      "male_life_expectancy": 75.14,
+      "female_life_expectancy": 78.6
+    },
+    {
+      "id": 174,
+      "initial": "TUR",
+      "country": "Turkey",
+      "male_life_expectancy": 73.84,
+      "female_life_expectancy": 78.7
+    },
+    {
+      "id": 175,
+      "initial": "TKM",
+      "country": "Turkmenistan",
+      "male_life_expectancy": 68.8,
+      "female_life_expectancy": 75.0
+    },
+    {
+      "id": 176,
+      "initial": "TUV",
+      "country": "Tuvalu",
+      "male_life_expectancy": 65.96,
+      "female_life_expectancy": 70.92
+    },
+    {
+      "id": 177,
+      "initial": "UGA",
+      "country": "Uganda",
+      "male_life_expectancy": 66.71,
+      "female_life_expectancy": 71.27
+    },
+    {
+      "id": 178,
+      "initial": "UK",
+      "country": "Ukraine",
+      "male_life_expectancy": 68.8,
+      "female_life_expectancy": 78.39
+    },
+    {
+      "id": 179,
+      "initial": "UNI",
+      "country": "United Kingdom",
+      "male_life_expectancy": 79.95,
+      "female_life_expectancy": 84.04
+    },
+    {
+      "id": 180,
+      "initial": "UNIT",
+      "country": "United States",
+      "male_life_expectancy": 76.01,
+      "female_life_expectancy": 80.86
+    },
+    {
+      "id": 181,
+      "initial": "UN",
+      "country": "United Arab Emirates",
+      "male_life_expectancy": 78.21,
+      "female_life_expectancy": 80.99
+    },
+    {
+      "id": 182,
+      "initial": "URU",
+      "country": "Uruguay",
+      "male_life_expectancy": 75.32,
+      "female_life_expectancy": 81.64
+    },
+    {
+      "id": 183,
+      "initial": "UZB",
+      "country": "Uzbekistan",
+      "male_life_expectancy": 72.27,
+      "female_life_expectancy": 78.5
+    },
+    {
+      "id": 184,
+      "initial": "VAN",
+      "country": "Vanuatu",
+      "male_life_expectancy": 73.45,
+      "female_life_expectancy": 76.91
+    },
+    {
+      "id": 185,
+      "initial": "VAT",
+      "country": "Vatican City",
+      "male_life_expectancy": null,
+      "female_life_expectancy": null
+    },
+    {
+      "id": 186,
+      "initial": "VEN",
+      "country": "Venezuela",
+      "male_life_expectancy": 70.12,
+      "female_life_expectancy": 76.62
+    },
+    {
+      "id": 187,
+      "initial": "VIE",
+      "country": "Vietnam",
+      "male_life_expectancy": 72.95,
+      "female_life_expectancy": 78.37
+    },
+    {
+      "id": 188,
+      "initial": "YEM",
+      "country": "Yemen",
+      "male_life_expectancy": 65.19,
+      "female_life_expectancy": 69.94
+    },
+    {
+      "id": 189,
+      "initial": "ZAM",
+      "country": "Zambia",
+      "male_life_expectancy": 64.52,
+      "female_life_expectancy": 68.06
+    },
+    {
+      "id": 190,
+      "initial": "ZIM",
+      "country": "Zimbabwe",
+      "male_life_expectancy": 61.18,
+      "female_life_expectancy": 65.52
+    }
+  ]

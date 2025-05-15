@@ -1,0 +1,118 @@
+---
+import json_data from '../data/life_exp.json';
+import '../styles/global.css';
+
+export const prerender = true;
+
+const pageTitle = 'Home Page';
+const countries = json_data;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <main class="flex-grow flex items-center justify-center">
+      <div class="centered-screen">
+        <div class="card">
+          <h2 class="text-2xl font-bold text-gray-200 mb-4">
+            Discover How Screen Time Consumes Your Life
+          </h2>
+          <form id="my-form" class="flex flex-col">
+            <input
+              placeholder="Age"
+              id="age"
+              name="age"
+              type="number"
+              min="0"
+              max="120"
+              required
+              class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+            />
+            <input
+              placeholder="Daily Screen Time (hrs)"
+              id="device"
+              name="device"
+              type="number"
+              min="0"
+              max="24"
+              required
+              class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+            />
+            <select
+              id="gender"
+              name="gender"
+              required
+              class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+            >
+              <option value="">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <select
+              id="country"
+              name="country"
+              required
+              class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+            >
+              <option value="">Country of Birth</option>
+              {countries.map(c => (
+                <option value={c.initial}>{c.country}</option>
+              ))}
+            </select>
+            <input
+              placeholder="Daily school/work (hrs)"
+              id="school-work"
+              name="school-work"
+              type="number"
+              min="0"
+              max="24"
+              required
+              class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+            />
+            <input
+              placeholder="Sleep per day (hrs)"
+              id="sleep"
+              name="sleep"
+              type="number"
+              min="0"
+              max="24"
+              required
+              class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+            />
+            <button
+              type="submit"
+              class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-indigo-600 hover:to-blue-600 transition"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- client-side form handler -->
+    <script type="module">
+      document.querySelector('#my-form').addEventListener('submit', e => {
+        e.preventDefault();
+        const f = e.target;
+        const qs = new URLSearchParams({
+          age:     f.age.value,
+          device:  f.device.value,
+          gender:  f.gender.value,
+          country: f.country.value,
+          school:  f['school-work'].value,
+          sleep:   f.sleep.value,
+        }).toString();
+        window.location.href = `/graph?${qs}`;
+      });
+    </script>
+  </body>
+</html>
