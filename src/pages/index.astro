@@ -1,18 +1,25 @@
 ---
 import '../styles/global.css';
 export const prerender = true;
-const pageTitle = 'Home Page';
+const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{pageTitle}</title>
+    <title>Visualife</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+    <script is:inline>
+      {`window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_ID}');`}
+    </script>
   </head>
 
   <body class="min-h-screen flex flex-col items-center justify-center">
@@ -88,7 +95,6 @@ const pageTitle = 'Home Page';
       </form>
     </div>
 
-    <!-- placeholder for your blocks -->
     <div id="graph" class="hidden w-full max-w-3xl mt-8">
       <div class="container-graph">
         <div class="desc">
@@ -121,10 +127,8 @@ const pageTitle = 'Home Page';
 
     <script type="module">
       document.addEventListener('DOMContentLoaded', async () => {
-        // 1️⃣ Fetch your JSON at runtime from public/data
         const countries = await fetch('/data/life_exp.json').then(r => r.json());
 
-        // 2️⃣ Populate the country <select>
         const countrySelect = document.getElementById('country');
         countries.forEach(c => {
           const o = document.createElement('option');
@@ -133,7 +137,6 @@ const pageTitle = 'Home Page';
           countrySelect.append(o);
         });
 
-        // 3️⃣ Handle form submission
         document.getElementById('my-form').addEventListener('submit', e => {
           e.preventDefault();
           const f = e.target;
@@ -146,29 +149,24 @@ const pageTitle = 'Home Page';
             sleep:   f.sleep.value,
           }).toString();
 
-          // show graph instead of navigating away
           history.replaceState(null, '', `?${qs}`);
           renderGraph(new URLSearchParams(qs), countries);
         });
 
-        // 4️⃣ If URL already has params, render immediately
         if (location.search) {
           renderGraph(new URLSearchParams(location.search), countries);
         }
-
-        // 5️⃣ Graph-rendering function
         function renderGraph(params, data) {
           // hide form, show graph
           document.getElementById('my-form').closest('.card').classList.add('hidden');
           document.getElementById('graph').classList.remove('hidden');
 
-          // extract & compute
-          const age    = +params.get('age')    || 0;
+          const age = +params.get('age') || 0;
           const device = +params.get('device') || 0;
-          const gender = params.get('gender')  || '';
-          const code   = params.get('country') || '';
+          const gender = params.get('gender') || '';
+          const code = params.get('country') || '';
           const school = +params.get('school') || 0;
-          const sleep  = +params.get('sleep')  || 0;
+          const sleep = +params.get('sleep') || 0;
 
           const country = data.find(c => c.initial === code);
           if (!country) {
@@ -176,16 +174,16 @@ const pageTitle = 'Home Page';
             return;
           }
 
-          const deathAge   = gender === 'male'
+          const deathAge = gender === 'male'
             ? country.male_life_expectancy
             : country.female_life_expectancy;
           const totalWeeks = Math.floor(deathAge * 52);
-          const lived      = Math.floor(age * 52);
-          const rem        = totalWeeks - lived;
-          const phone      = Math.floor((device * 7 * rem)/168);
-          const sleepW     = Math.floor((sleep  * 7 * rem)/168);
-          const work       = Math.floor((school * 7 * rem)/168);
-          const free       = totalWeeks - (lived + phone + sleepW + work);
+          const lived = Math.floor(age * 52);
+          const rem = totalWeeks - lived;
+          const phone = Math.floor((device * 7 * rem)/168);
+          const sleepW = Math.floor((sleep  * 7 * rem)/168);
+          const work = Math.floor((school * 7 * rem)/168);
+          const free = totalWeeks - (lived + phone + sleepW + work);
 
           const toY = w => Math.floor(w/52);
           const toH = w => Math.floor(w*168);
