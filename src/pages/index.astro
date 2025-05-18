@@ -13,12 +13,17 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+    ></script>
     <script is:inline>
-      {`window.dataLayer = window.dataLayer || [];
+    {`
+      window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${GA_ID}');`}
+      gtag('config', '${GA_ID}');
+    `}
     </script>
   </head>
 
