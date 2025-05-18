@@ -2,6 +2,12 @@
 import '../styles/global.css';
 export const prerender = true;
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
+const inlineScript = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${GA_ID}');
+`;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -17,14 +23,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       async
       src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
     ></script>
-    <script is:inline>
-    {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${GA_ID}');
-    `}
-    </script>
+    <script innerHTML={inlineScript}></script>
   </head>
 
   <body class="min-h-screen flex flex-col items-center justify-center">
