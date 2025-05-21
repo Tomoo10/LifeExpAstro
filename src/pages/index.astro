@@ -26,12 +26,11 @@ export const prerender = true;
     </script>
   </head>
   <body class="min-h-screen flex flex-col items-center justify-center">
-    <h1>Visualife</h1>
     <div class="card">
-      <h2 class="text-2xl font-bold text-gray-200 mb-4">
+      <h1 class="form-title">
         Discover How Screen Time Consumes Your Life
-      </h2>
-      <form id="my-form" class="flex flex-col">
+      </h1>
+      <form id="my-form" class="form-container">
         <input
           placeholder="Age"
           id="age"
@@ -40,7 +39,7 @@ export const prerender = true;
           min="0"
           max="120"
           required
-          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+          class="form-input"
         />
         <input
           placeholder="Daily Screen Time (hrs)"
@@ -50,13 +49,13 @@ export const prerender = true;
           min="0"
           max="24"
           required
-          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+          class="form-input"
         />
         <select
           id="gender"
           name="gender"
           required
-          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+          class="form-input"
         >
           <option value="">Gender</option>
           <option value="male">Male</option>
@@ -66,7 +65,7 @@ export const prerender = true;
           id="country"
           name="country"
           required
-          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+          class="form-input"
         >
           <option value="">Country of Birth</option>
         </select>
@@ -78,7 +77,7 @@ export const prerender = true;
           min="0"
           max="24"
           required
-          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+          class="form-input"
         />
         <input
           placeholder="Sleep per day (hrs)"
@@ -88,11 +87,11 @@ export const prerender = true;
           min="0"
           max="24"
           required
-          class="bg-gray-700 text-gray-200 rounded-md p-2 mb-4 focus:bg-gray-600 focus:ring-1 focus:ring-blue-500 transition"
+          class="form-input"
         />
         <button
           type="submit"
-          class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-indigo-600 hover:to-blue-600 transition"
+          class="form-submit"
         >
           Submit
         </button>
@@ -122,10 +121,13 @@ export const prerender = true;
         <div id="blockArea" class="block-container"></div>
       </div>
       <div class="container-data mt-8">
-        <h1 class="title">Stats</h1>
-        <div id="stats" class="para-data"></div>
-        <h1 class="title mt-4">Life Lost to Your Screen</h1>
-        <p id="screen-loss" class="para-data"></p>
+        <div class="desc">
+          <h1 class="title-name">Stats</h1>
+          <div id="stats" class="para-data"></div>
+          <h1 class="title mt-4">Life Lost to Your Screen</h1>
+          <p id="screen-loss" class="para-data"></p>
+        </div>
+
       </div>
     </div>
 
