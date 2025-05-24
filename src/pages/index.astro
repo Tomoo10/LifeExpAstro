@@ -26,110 +26,113 @@ export const prerender = true;
     </script>
   </head>
   <body class="min-h-screen flex flex-col items-center justify-center">
-    <div class="card">
-      <h1 class="form-title">
-        Discover How Screen Time Consumes Your Life
-      </h1>
-      <form id="my-form" class="form-container">
-        <input
-          placeholder="Age"
-          id="age"
-          name="age"
-          type="number"
-          min="0"
-          max="120"
-          required
-          class="form-input"
-        />
-        <input
-          placeholder="Daily Screen Time (hrs)"
-          id="device"
-          name="device"
-          type="number"
-          min="0"
-          max="24"
-          required
-          class="form-input"
-        />
-        <select
-          id="gender"
-          name="gender"
-          required
-          class="form-input"
-        >
-          <option value="">Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        <select
-          id="country"
-          name="country"
-          required
-          class="form-input"
-        >
-          <option value="">Country of Birth</option>
-        </select>
-        <input
-          placeholder="Daily school/work (hrs)"
-          id="school-work"
-          name="school-work"
-          type="number"
-          min="0"
-          max="24"
-          required
-          class="form-input"
-        />
-        <input
-          placeholder="Sleep per day (hrs)"
-          id="sleep"
-          name="sleep"
-          type="number"
-          min="0"
-          max="24"
-          required
-          class="form-input"
-        />
-        <button
-          type="submit"
-          class="form-submit"
-        >
-          Submit
-        </button>
-      </form>
+    <div class="card-container">
+      <div class="card">
+        <h1 class="form-title">
+          Discover How Screen Time Consumes Your Life
+        </h1>
+        <form id="my-form" class="form-container">
+          <input
+            placeholder="Age"
+            id="age"
+            name="age"
+            type="number"
+            min="0"
+            max="120"
+            required
+            class="form-input"
+          />
+          <input
+            placeholder="Daily Screen Time (hrs)"
+            id="device"
+            name="device"
+            type="number"
+            min="0"
+            max="24"
+            required
+            class="form-input"
+          />
+          <select
+            id="gender"
+            name="gender"
+            required
+            class="form-input"
+          >
+            <option value="">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <select
+            id="country"
+            name="country"
+            required
+            class="form-input"
+          >
+            <option value="">Country of Birth</option>
+          </select>
+          <input
+            placeholder="Daily school/work (hrs)"
+            id="school-work"
+            name="school-work"
+            type="number"
+            min="0"
+            max="24"
+            required
+            class="form-input"
+          />
+          <input
+            placeholder="Sleep per day (hrs)"
+            id="sleep"
+            name="sleep"
+            type="number"
+            min="0"
+            max="24"
+            required
+            class="form-input"
+          />
+          <button
+            type="submit"
+            class="form-submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>  
     </div>
-
-    <div id="graph" class="hidden w-full max-w-3xl mt-8">
-      <div class="container-graph">
-        <div class="desc">
-          <h1 class="title-name">Your Life at a Glance</h1>
-          <div class="block-exp">
-            <div class="block lived"></div><p>Weeks Already Lived</p>
+    
+    <div id="graph" class="hidden w-full max-w-3xl mt-8"></div>
+      <div class="graphs">
+        <div class="container-graph">
+          <div class="desc">
+            <h1 class="title-name">Your Life at a Glance</h1>
+            <div class="block-exp">
+              <div class="block lived"></div><p>Weeks Already Lived</p>
+            </div>
+            <div class="block-exp">
+              <div class="block work"></div><p>Weeks at School/Work</p>
+            </div>
+            <div class="block-exp">
+              <div class="block sleep"></div><p>Weeks You Sleep</p>
+            </div>
+            <div class="block-exp">
+              <div class="block phone"></div><p>Weeks on Your Phone</p>
+            </div>
+            <div class="block-exp">
+              <div class="block free"></div><p>Free Weeks Left</p>
+            </div>
           </div>
-          <div class="block-exp">
-            <div class="block work"></div><p>Weeks at School/Work</p>
-          </div>
-          <div class="block-exp">
-            <div class="block sleep"></div><p>Weeks You Sleep</p>
-          </div>
-          <div class="block-exp">
-            <div class="block phone"></div><p>Weeks on Your Phone</p>
-          </div>
-          <div class="block-exp">
-            <div class="block free"></div><p>Free Weeks Left</p>
-          </div>
+          <div id="blockArea" class="block-container"></div>
         </div>
-        <div id="blockArea" class="block-container"></div>
-      </div>
-      <div class="container-data mt-8">
-        <div class="desc">
-          <h1 class="title-name">Stats</h1>
-          <div id="stats" class="para-data"></div>
-          <h1 class="title mt-4">Life Lost to Your Screen</h1>
-          <p id="screen-loss" class="para-data"></p>
+        <div class="container-data mt-8">
+          <div class="desc">
+            <h1 class="title-name">Stats</h1>
+            <div id="stats" class="para-data"></div>
+            <h1 class="title-name">Life Lost to Your Screen</h1>
+            <p id="screen-loss"></p>
+          </div>
+  
         </div>
-
       </div>
-    </div>
 
     <script type="module">
       document.addEventListener('DOMContentLoaded', async () => {
@@ -210,15 +213,15 @@ export const prerender = true;
 
           // stats text
           document.getElementById('stats').innerHTML = `
-            <p>Total weeks: ${totalWeeks} (${country.country}, ${gender}, life exp ${deathAge} yrs)</p>
-            <p>Weeks lived: ${lived} (${toH(lived)} hrs)</p>
-            <p>School/Work: ${work} (${toH(work)} hrs)</p>
-            <p>Sleep: ${sleepW} (${toH(sleepW)} hrs)</p>
-            <p>Phone: ${phone} (${toH(phone)} hrs)</p>
-            <p>Free: ${free} (${toH(free)} hrs)</p>
+            <p>Total weeks: ${totalWeeks}weeks (${country.country}, ${gender}, life exp ${deathAge} yrs)</p>
+            <p>Weeks lived: ${lived}weeks (${toH(lived)} hrs)</p>
+            <p>School/Work: ${work}weeks (${toH(work)} hrs)</p>
+            <p>Sleep: ${sleepW}weeks (${toH(sleepW)} hrs)</p>
+            <p>Phone: ${phone}weeks (${toH(phone)} hrs)</p>
+            <p>Free: ${free}weeks (${toH(free)} hrs)</p>
           `;
           document.getElementById('screen-loss').textContent =
-            `${phone} weeks = ${toY(phone)} yrs (${toH(phone)} hrs), ${toP(phone)}% of life`;
+            `${phone} weeks = ${toY(phone)} yrs (${toH(phone)} hrs), ${toP(phone)}% of your life`;
         }
       });
     </script>
