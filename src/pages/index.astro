@@ -99,8 +99,7 @@ export const prerender = true;
         </form>
       </div>  
     </div>
-    
-    <div id="graph" class="hidden w-full max-w-3xl mt-8"></div>
+    <div id="graph" class="hidden w-full max-w-3xl mt-8">
       <div class="graphs">
         <div class="container-graph">
           <div class="desc">
@@ -133,7 +132,7 @@ export const prerender = true;
   
         </div>
       </div>
-
+    </div>
     <script type="module">
       document.addEventListener('DOMContentLoaded', async () => {
         const countries = await fetch('/data/life_exp.json').then(r => r.json());

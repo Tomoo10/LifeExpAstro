@@ -281,7 +281,7 @@ html::-webkit-scrollbar {
         justify-content: center;
         width: 700px;
         height: 100%;
-        padding: 30px 0 30px 0;
+        padding: 30px;
         margin: 20px 0px 20px 0px;
         flex-direction: column;
         border: 2px solid black;
@@ -375,17 +375,7 @@ html::-webkit-scrollbar {
         margin: 0 10px 10px 10px;
     }
     
-    .para-data {
-        margin: 0 0 0 10px;
-        font-family: Helvetica, Arial;
-        font-size: large;
-    }
-    .para-data-s {
-        margin: 0;
-        font-family: Helvetica, Arial;
-        font-weight: normal;
-        font-size: large;
-    }
+
     .block-exp {
         display: flex;
         align-items: center;
